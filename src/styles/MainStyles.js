@@ -37,4 +37,13 @@ export default StyleSheet.create({
   scrollView: {
     backgroundColor: '#f5f5f5',
   },
+  boldText: {
+    fontFamily: 'Comfortaa-Bold',
+  },
+  lightText: {
+    fontFamily: 'Comfortaa-Light',
+  },
+  mediumText: {
+    fontFamily: 'Comfortaa-Medium',
+  },
 });
