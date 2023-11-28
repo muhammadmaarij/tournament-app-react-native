@@ -12,18 +12,16 @@ const GreenHeaderWrapper = ({text, textSub}) => (
     <View
       style={{
         position: 'absolute',
-        left: '50%',
-        transform: [{translateX: -12.5}],
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 10,
       }}>
-      <TouchableOpacity
-        onPress={() => {
-          /* Handle back button press */
-        }}>
-        <Icon name="group" size={24} color="#0C134F" />
+      <TouchableOpacity style={{marginLeft: 13}} onPress={() => {}}>
+        <Icon name="angle-left" size={38} color="#FFFFFF" />
       </TouchableOpacity>
       <Image
         source={require('../assets/images/logo.png')}
-        style={{width: 25, height: 50}}
+        style={{width: 25, height: 50, marginLeft: width * 0.4}}
       />
     </View>
     <View
