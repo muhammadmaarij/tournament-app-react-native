@@ -6,6 +6,7 @@ import SearchComponent from '../components/SearchComponent';
 import TournamentCard from '../components/TournamentCard';
 import Match from '../components/Match';
 import styles from '../styles/MainStyles';
+import SearchBar from '../components/SearchBar';
 
 const HomeScreen = () => {
   const [tournaments, setTournaments] = useState([
@@ -27,7 +28,7 @@ const HomeScreen = () => {
       <SafeAreaView style={styles.container}>
         <Header />
         <ScrollView style={styles.scrollView}>
-          <SearchComponent style={styles.search} />
+          <SearchBar term={'Search any tournament'} />
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Upcoming Tournaments</Text>
             {tournaments.map(tournament => (
@@ -35,15 +36,19 @@ const HomeScreen = () => {
                 key={tournament.id}
                 tournament={tournament}
                 style={styles.card}
+                name={"Tournament"}
+                time={"10 Dec - 12 Dec"}
+                winning={"20k"}
+                slots={"7/15"}
               />
             ))}
           </View>
-          <View style={styles.section}>
+          {/* <View style={styles.section}>
             <Text style={styles.sectionTitle}>Today's Matches</Text>
             {matches.map(match => (
               <Match key={match.id} match={match} style={styles.match} />
             ))}
-          </View>
+          </View> */}
         </ScrollView>
       </SafeAreaView>
     </PaperProvider>

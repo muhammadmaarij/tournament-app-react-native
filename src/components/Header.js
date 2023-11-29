@@ -9,9 +9,6 @@ const {width, height} = Dimensions.get('window');
 const Header = () => (
   <View>
     <GreenHeaderWrapper text={'Welcome Maarij'} textSub={'Lets get started'} />
-    <Appbar.Header>
-      <Appbar.Content title="Welcome m!" subtitle="Let's get started" />
-    </Appbar.Header>
   </View>
 );
 

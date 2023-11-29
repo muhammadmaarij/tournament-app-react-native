@@ -33,6 +33,7 @@ export default StyleSheet.create({
     marginLeft: 16,
     fontSize: 20,
     fontWeight: 'bold',
+    color:'black'
   },
   scrollView: {
     backgroundColor: '#f5f5f5',
