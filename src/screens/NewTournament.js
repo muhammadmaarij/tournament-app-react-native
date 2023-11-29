@@ -2,11 +2,7 @@ import React, {useState} from 'react';
 import {SafeAreaView, View, ScrollView, Text} from 'react-native';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Header from '../components/Header';
-import SearchComponent from '../components/SearchComponent';
-import TournamentCard from '../components/TournamentCard';
-import Match from '../components/Match';
 import styles from '../styles/MainStyles';
-import SearchBar from '../components/SearchBar';
 import CustomButton from '../components/CustomButton';
 import CustomTextInput from '../components/CustomTextInput';
 
@@ -16,7 +12,28 @@ const NewTournament = () => {
       <SafeAreaView style={styles.container}>
         <Header text={'New Tournament'} textSub={''} />
         <ScrollView style={styles.scrollView}>
-          <CustomTextInput placeholder={'New Tournament'} />
+          <CustomTextInput
+            name={'Title'}
+            placeholder={'Enter Tournament Title'}
+          />
+          <CustomTextInput
+            name={'Venue'}
+            placeholder={'Enter online for virtual'}
+          />
+          <CustomTextInput
+            name={'Slots'}
+            placeholder={'Enter Tournament Slots'}
+          />
+          <CustomTextInput
+            name={'Date'}
+            placeholder={'Enter Tournament Title'}
+          />
+          <CustomTextInput
+            name={'Winning Prize'}
+            placeholder={'Enter Tournament Prize'}
+          />
+          <View style={{height: 20}}></View>
+          <CustomButton title={'Create Tournament'} />
         </ScrollView>
       </SafeAreaView>
     </PaperProvider>

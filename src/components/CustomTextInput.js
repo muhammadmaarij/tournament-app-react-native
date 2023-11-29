@@ -9,10 +9,20 @@ export default function CustomTextInput({
   text,
   placeholder,
   secureText,
+  name
 }) {
   return (
     <View>
-      <Text></Text>
+      <Text
+        style={{
+          fontSize: 16,
+          fontWeight: '700',
+          color: '#567189',
+          marginLeft: width * 0.1,
+          marginBottom:5
+        }}>
+        {name}
+      </Text>
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}
