@@ -13,6 +13,7 @@ const PlayerRegistration = () => {
         <Header text={'Player Registration'} textSub={''} />
         <ScrollView style={styles.scrollView}>
           <CustomTextInput name={'Name'} placeholder={'Enter Player Name'} />
+
           <View style={{height: 50}}></View>
           <CustomButton title={'Register'} />
         </ScrollView>
