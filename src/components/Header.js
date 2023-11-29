@@ -6,9 +6,9 @@ import GreenHeaderWrapper from './GreenHeaderWrapper';
 
 const {width, height} = Dimensions.get('window');
 
-const Header = () => (
+const Header = ({text, textSub}) => (
   <View>
-    <GreenHeaderWrapper text={'Welcome Maarij'} textSub={'Lets get started'} />
+    <GreenHeaderWrapper text={text} textSub={textSub} />
   </View>
 );
 

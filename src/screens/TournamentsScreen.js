@@ -7,8 +7,9 @@ import TournamentCard from '../components/TournamentCard';
 import Match from '../components/Match';
 import styles from '../styles/MainStyles';
 import SearchBar from '../components/SearchBar';
+import CustomButton from '../components/CustomButton';
 
-const HomeScreen = () => {
+const TournamentsScreen = () => {
   const [tournaments, setTournaments] = useState([
     {
       id: '1',
@@ -26,9 +27,9 @@ const HomeScreen = () => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header text={'Welcome Maarij'} textSub={'Lets get started'} />
+        <Header text={'Tournaments'} textSub={''} />
         <ScrollView style={styles.scrollView}>
-          <SearchBar term={'Search any tournament'} />
+          <CustomButton title={'New Tournament'} />
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Upcoming Tournaments</Text>
             {tournaments.map(tournament => (
@@ -60,4 +61,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default TournamentsScreen;
