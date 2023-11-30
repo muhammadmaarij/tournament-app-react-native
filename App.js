@@ -10,9 +10,12 @@ import TotalTeamsC from './src/components/TotalTeamsC';
 import TournamentFormat from './src/screens/TournamentFormat';
 import MatchSlot from './src/components/MatchSlot';
 import EditMatchScreen from './src/screens/EditMatchScreen';
+import CustomDatePicker from './src/components/CustomDatePicker';
+import ResultsScreen from './src/screens/ResultsScreen';
+import MatchResultSubmissionScreen from './src/screens/MatchResultsSubmissionScreen';
 
 const App = () => {
-  return <EditMatchScreen />;
+  return <MatchResultSubmissionScreen />;
 };
 
 export default App;
