@@ -6,9 +6,13 @@ import TournamentsScreen from './src/screens/TournamentsScreen';
 import NewTournament from './src/screens/NewTournament';
 import PlayerRegistration from './src/screens/PlayerRegistration';
 import TeamRegistration from './src/screens/TeamRegistration';
+import TotalTeamsC from './src/components/TotalTeamsC';
+import TournamentFormat from './src/screens/TournamentFormat';
+import MatchSlot from './src/components/MatchSlot';
+import EditMatchScreen from './src/screens/EditMatchScreen';
 
 const App = () => {
-  return <TeamRegistration />;
+  return <EditMatchScreen />;
 };
 
 export default App;

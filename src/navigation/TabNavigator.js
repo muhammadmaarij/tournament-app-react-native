@@ -9,10 +9,6 @@ import Results from '../assets/svgs/Results.svg';
 import Gamerxpo from '../assets/svgs/Gamerxpo.svg';
 import Tournament from '../assets/svgs/Tournament.svg';
 import Home from '../assets/svgs/Home.svg';
-// import GroupScreen from '../screens/GroupScreen';
-// import NotificationScreen from '../screens/NotificationScreen';
-// import PostScreen from '../screens/PostScreen';
-// import MenuScreen from '../screens/MenuScreen';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
