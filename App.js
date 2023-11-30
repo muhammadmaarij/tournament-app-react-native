@@ -13,17 +13,10 @@ import EditMatchScreen from './src/screens/EditMatchScreen';
 import CustomDatePicker from './src/components/CustomDatePicker';
 import ResultsScreen from './src/screens/ResultsScreen';
 import MatchResultSubmissionScreen from './src/screens/MatchResultsSubmissionScreen';
+import TournamentDetail from './src/screens/TournamentDetail';
 
 const App = () => {
-  return (
-    <MatchSlot
-      match="Quarter Final"
-      team1="Team Alpha"
-      team2="Team Beta"
-      type="knockout"
-      isSpectator={true}
-    />
-  );
+  return <TournamentDetail />;
 };
 
 export default App;
