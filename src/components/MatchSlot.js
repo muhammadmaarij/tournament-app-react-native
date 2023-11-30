@@ -2,18 +2,15 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const MatchSlot = ({match, team1, team2, type}) => {
+const MatchSlot = ({match, team1, team2, type, isSpectator}) => {
   // A helper function to render the team slot
   const renderTeamSlot = (team, isTeam1) => {
     return (
       <View style={styles.team}>
-        <Text style={isTeam1 ? styles.teamText : styles.emptySlotText}>
+        <Text style={team != '' ? styles.teamText : styles.emptySlotText}>
           {team || 'Empty Slot'}
         </Text>
-        {team && (
-          <TouchableOpacity>
-          </TouchableOpacity>
-        )}
+        {team && <TouchableOpacity></TouchableOpacity>}
       </View>
     );
   };
@@ -28,6 +25,12 @@ const MatchSlot = ({match, team1, team2, type}) => {
       </View>
       {renderTeamSlot(team1, true)}
       {renderTeamSlot(team2, false)}
+      {isSpectator && (
+        <TouchableOpacity style={styles.resultButton} onPress={() => {}}>
+          <Text style={styles.resultButtonText}>Submit Result</Text>
+          <Icon name="trophy" size={24} color="white" />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -71,6 +74,21 @@ const styles = StyleSheet.create({
   emptySlotText: {
     color: 'red',
     fontSize: 18,
+  },
+  resultButton: {
+    backgroundColor: '#4F6F52',
+    padding: 10,
+    borderRadius: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    width: '100%', // Match the width with other elements
+  },
+  resultButtonText: {
+    color: 'white',
+    fontSize: 18,
+    marginRight: 5, // Add space between text and icon
   },
 });
 

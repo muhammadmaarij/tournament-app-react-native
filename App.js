@@ -15,7 +15,15 @@ import ResultsScreen from './src/screens/ResultsScreen';
 import MatchResultSubmissionScreen from './src/screens/MatchResultsSubmissionScreen';
 
 const App = () => {
-  return <MatchResultSubmissionScreen />;
+  return (
+    <MatchSlot
+      match="Quarter Final"
+      team1="Team Alpha"
+      team2="Team Beta"
+      type="knockout"
+      isSpectator={true}
+    />
+  );
 };
 
 export default App;
