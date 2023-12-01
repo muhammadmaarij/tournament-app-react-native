@@ -10,7 +10,11 @@ const PlayerRegistration = () => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header text={'Player Registration'} textSub={''} />
+        <Header
+          text={'Player Registration'}
+          textSub={''}
+          navigationFn={() => navigation.pop()}
+        />
         <ScrollView style={styles.scrollView}>
           <CustomTextInput name={'Name'} placeholder={'Enter Player Name'} />
 
