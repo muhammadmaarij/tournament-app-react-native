@@ -10,7 +10,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../components/Header';
 import CustomButton from '../components/CustomButton';
 
-const TournamentDetail = ({name, details, dates, prize, slots, navigation}) => {
+const TournamentDetail = ({navigation, route}) => {
+  const {id, name, startDate, endDate, winning, slots, details} = route.params;
   return (
     <View style={styles.container}>
       <Header
@@ -20,9 +21,10 @@ const TournamentDetail = ({name, details, dates, prize, slots, navigation}) => {
       <View style={styles.tournamentDetails}>
         <Text style={styles.tournamentTitle}>{name}</Text>
         <Text style={styles.tournamentSubtitle}>{details}</Text>
-        <Text style={styles.date}>{dates}</Text>
-        <Text style={styles.prize}>{prize}</Text>
-        <Text style={styles.slots}>{slots}</Text>
+        <Text style={styles.date}>Start date: {startDate}</Text>
+        <Text style={styles.date}>End date: {endDate}</Text>
+        <Text style={styles.prize}>Prize: {winning}</Text>
+        <Text style={styles.slots}>Slots: {slots}</Text>
       </View>
       <CustomButton title={'Register Individual'} />
       <View style={{marginTop: 30}}></View>

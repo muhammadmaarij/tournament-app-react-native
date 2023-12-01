@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, View, ScrollView, Text} from 'react-native';
+import {SafeAreaView, View, ScrollView, Text, Pressable} from 'react-native';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Header from '../components/Header';
 import SearchComponent from '../components/SearchComponent';
@@ -13,9 +13,12 @@ const TournamentsScreen = ({navigation}) => {
   const [tournaments, setTournaments] = useState([
     {
       id: '1',
-      title: 'Tekken 8 Evo Tournament',
+      name: 'Tekken 8 Evo Tournament',
       winning: '100k',
-      image: 'https://via.placeholder.com/150',
+      startDate: '15-5-23',
+      endDate: '17-5-23',
+      slots: 12,
+      details: 'details',
     },
     // ... more tournaments
   ]);
@@ -29,19 +32,38 @@ const TournamentsScreen = ({navigation}) => {
       <SafeAreaView style={styles.container}>
         <Header text={'Tournaments'} textSub={''} />
         <ScrollView style={styles.scrollView}>
-          <CustomButton title={'New Tournament'} />
+          <CustomButton
+            title={'New Tournament'}
+            onPress={() => {
+              navigation.navigate('NewTournament');
+            }}
+          />
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Upcoming Tournaments</Text>
             {tournaments.map(tournament => (
-              <TournamentCard
+              <Pressable
                 key={tournament.id}
-                tournament={tournament}
-                style={styles.card}
-                name={'Tournament'}
-                time={'10 Dec - 12 Dec'}
-                winning={'20k'}
-                slots={'7/15'}
-              />
+                onPress={() => {
+                  navigation.navigate('TournamentDetail', {
+                    id: tournament.id,
+                    name: tournament.name,
+                    startDate: tournament.startDate,
+                    endDate: tournament.endDate,
+                    winning: tournament.winning,
+                    slots: tournament.slots,
+                    details: tournament.details,
+                  });
+                }}>
+                <TournamentCard
+                  key={tournament.id}
+                  tournament={tournament}
+                  style={styles.card}
+                  name={'Tournament'}
+                  time={'10 Dec - 12 Dec'}
+                  winning={'20k'}
+                  slots={'7/15'}
+                />
+              </Pressable>
             ))}
           </View>
           <View style={styles.section}>

@@ -13,15 +13,16 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const CustomDatePicker = ({name}) => {
-  const [date, setDate] = useState(new Date());
+const CustomDatePicker = ({name, date, onChange}) => {
+  const [date1, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
+  const onChangeProp = (event, selectedDate) => {
+    const currentDate = selectedDate || date; // fallback to the current date if selectedDate is undefined
     setShow(Platform.OS === 'ios');
-    setDate(currentDate);
+    setDate(currentDate); // Use currentDate here, not onChange
+    onChange(currentDate); // Call the onChange prop with the new date
   };
 
   const showMode = currentMode => {
@@ -47,7 +48,7 @@ const CustomDatePicker = ({name}) => {
           mode={mode}
           is24Hour={true}
           display="default"
-          onChange={onChange}
+          onChange={onChangeProp}
         />
       )}
     </View>
