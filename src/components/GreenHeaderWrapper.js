@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
-const GreenHeaderWrapper = ({text, textSub}) => (
+const GreenHeaderWrapper = ({text, textSub, navigationFn}) => (
   <View>
     <GreenHeader width={width * 0.85} height={width * 0.47} />
     <View
@@ -16,7 +16,7 @@ const GreenHeaderWrapper = ({text, textSub}) => (
         justifyContent: 'space-between',
         marginTop: 10,
       }}>
-      <TouchableOpacity style={{marginLeft: 13}} onPress={() => {}}>
+      <TouchableOpacity style={{marginLeft: 13}} onPress={navigationFn}>
         <Icon name="angle-left" size={38} color="#FFFFFF" />
       </TouchableOpacity>
       <Image

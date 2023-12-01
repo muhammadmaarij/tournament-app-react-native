@@ -3,24 +3,29 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
 // Import screens
-import HomeScreen from './screens/HomeScreen';
-import EditMatchScreen from './screens/EditMatchScreen';
-import MatchResultsSubmissionScreen from './screens/MatchResultsSubmissionScreen';
-import NewTournament from './screens/NewTournament';
-import PlayerRegistration from './screens/PlayerRegistration';
-import ResultsScreen from './screens/ResultsScreen';
-import TeamRegistration from './screens/TeamRegistration';
-import TournamentDetail from './screens/TournamentDetail';
-import TournamentFormat from './screens/TournamentFormat';
-import TournamentsScreen from './screens/TournamentsScreen';
+import HomeScreen from '../screens/HomeScreen';
+import EditMatchScreen from '../screens/EditMatchScreen';
+import MatchResultsSubmissionScreen from '../screens/MatchResultsSubmissionScreen';
+import NewTournament from '../screens/NewTournament';
+import PlayerRegistration from '../screens/PlayerRegistration';
+import ResultsScreen from '../screens/ResultsScreen';
+import TeamRegistration from '../screens/TeamRegistration';
+import TournamentDetail from '../screens/TournamentDetail';
+import TournamentFormat from '../screens/TournamentFormat';
+import TournamentsScreen from '../screens/TournamentsScreen';
+import TabNavigation from './TabNavigator';
 
 const Stack = createStackNavigator();
 
 function StackNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Navigator initialRouteName="HomeTabs">
+        <Stack.Screen
+          name="HomeTabs"
+          component={TabNavigation}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="EditMatchScreen" component={EditMatchScreen} />
         <Stack.Screen
           name="MatchResultsSubmissionScreen"

@@ -14,9 +14,15 @@ import CustomDatePicker from './src/components/CustomDatePicker';
 import ResultsScreen from './src/screens/ResultsScreen';
 import MatchResultSubmissionScreen from './src/screens/MatchResultsSubmissionScreen';
 import TournamentDetail from './src/screens/TournamentDetail';
+import StackNavigator from './src/navigation/StackNavigator';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const App = () => {
-  return <TournamentDetail />;
+  return (
+    <GestureHandlerRootView style={{flex: 1}}>
+      <StackNavigator />
+    </GestureHandlerRootView>
+  );
 };
 
 export default App;

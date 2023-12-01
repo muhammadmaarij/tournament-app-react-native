@@ -9,6 +9,10 @@ import Results from '../assets/svgs/Results.svg';
 import Gamerxpo from '../assets/svgs/Gamerxpo.svg';
 import Tournament from '../assets/svgs/Tournament.svg';
 import Home from '../assets/svgs/Home.svg';
+import TournamentsScreen from '../screens/TournamentsScreen';
+import ResultsScreen from '../screens/ResultsScreen';
+import FavouriteTournamentsScreen from '../screens/FavouriteTournamentsScreen';
+import TournamentResultsScreen from '../screens/TournamentResultsScreen';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -17,7 +21,6 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-    <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
         inactiveColor="black"
@@ -29,8 +32,8 @@ export default function TabNavigation() {
         }}
         screenOptions={{headerShown: false}}>
         <Tab.Screen
-          name="Home"
-          component={HomeScreen}
+          name="Tournaments"
+          component={TournamentsScreen}
           options={{
             tabBarIcon: () => (
               <Tournament width={width * 0.06} height={width * 0.06} />
@@ -40,14 +43,14 @@ export default function TabNavigation() {
         />
         <Tab.Screen
           name="Fav"
-          component={HomeScreen}
+          component={FavouriteTournamentsScreen}
           options={{
             tabBarIcon: () => <Icon name="heart-o" size={28} color="black" />,
             tabBarShowLabel: false,
           }}
         />
         <Tab.Screen
-          name="Post"
+          name="Home"
           component={HomeScreen}
           options={{
             tabBarIcon: () => (
@@ -68,8 +71,8 @@ export default function TabNavigation() {
           }}
         />
         <Tab.Screen
-          name="Notification"
-          component={HomeScreen}
+          name="Results"
+          component={TournamentResultsScreen}
           options={{
             tabBarIcon: () => (
               <Results width={width * 0.06} height={width * 0.06} />
@@ -78,7 +81,7 @@ export default function TabNavigation() {
           }}
         />
         <Tab.Screen
-          name="Menu"
+          name="GamerXpo"
           component={HomeScreen}
           options={{
             tabBarIcon: () => (
@@ -88,7 +91,6 @@ export default function TabNavigation() {
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }
 

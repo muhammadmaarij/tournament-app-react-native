@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
+import Header from '../components/Header';
 
 const tournamentResults = [
   {
@@ -20,31 +21,35 @@ const tournamentResults = [
   // Add more matches as needed
 ];
 
-const ResultsScreen = () => {
+const ResultsScreen = ({navigation}) => {
   const renderItem = ({item}) => (
-    <View style={styles.matchContainer}>
-      <Text style={styles.matchText}>{item.match}</Text>
-      <Text style={styles.teamText}>
-        {item.team1} vs {item.team2}
-      </Text>
-      <Text style={styles.winnerText}>Winner: {item.winner}</Text>
+    <View>
+      <View style={styles.matchContainer}>
+        <Text style={styles.matchText}>{item.match}</Text>
+        <Text style={styles.teamText}>
+          {item.team1} vs {item.team2}
+        </Text>
+        <Text style={styles.winnerText}>Winner: {item.winner}</Text>
+      </View>
     </View>
   );
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={tournamentResults}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
+    <View>
+      <Header text={'Results'} navigationFn={() => navigation.pop()} />
+      <View style={styles.container}>
+        <FlatList
+          data={tournamentResults}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#f5f5f5',
     alignItems: 'center',
     justifyContent: 'center',
