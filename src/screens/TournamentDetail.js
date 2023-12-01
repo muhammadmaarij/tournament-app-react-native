@@ -13,7 +13,10 @@ import CustomButton from '../components/CustomButton';
 const TournamentDetail = ({name, details, dates, prize, slots}) => {
   return (
     <View style={styles.container}>
-      <Header text={'Tournament Details'} />
+      <Header
+        text={'Tournament Details'}
+        navigationFn={() => navigation.pop()}
+      />
       <View style={styles.tournamentDetails}>
         <Text style={styles.tournamentTitle}>{name}</Text>
         <Text style={styles.tournamentSubtitle}>{details}</Text>
