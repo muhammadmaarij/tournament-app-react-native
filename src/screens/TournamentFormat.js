@@ -10,7 +10,7 @@ import TotalTeamsC from '../components/TotalTeamsC';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const TournamentFormat = () => {
+const TournamentFormat = ({navigation}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>

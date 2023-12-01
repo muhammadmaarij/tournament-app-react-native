@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../components/Header';
 import CustomButton from '../components/CustomButton';
 
-const TournamentDetail = ({name, details, dates, prize, slots}) => {
+const TournamentDetail = ({name, details, dates, prize, slots, navigation}) => {
   return (
     <View style={styles.container}>
       <Header

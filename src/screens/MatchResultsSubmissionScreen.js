@@ -14,7 +14,7 @@ import CustomTextInput from '../components/CustomTextInput'; // Assuming this is
 import CustomButton from '../components/CustomButton'; // Assuming this is your styled Button
 import Header from '../components/Header';
 
-const MatchResultSubmissionScreen = () => {
+const MatchResultSubmissionScreen = ({navigation}) => {
   const [team1Score, setTeam1Score] = useState('');
   const [team2Score, setTeam2Score] = useState('');
   const [comments, setComments] = useState('');

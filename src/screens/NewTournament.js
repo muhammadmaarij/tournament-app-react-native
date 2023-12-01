@@ -6,7 +6,7 @@ import styles from '../styles/MainStyles';
 import CustomButton from '../components/CustomButton';
 import CustomTextInput from '../components/CustomTextInput';
 
-const NewTournament = () => {
+const NewTournament = ({navigation}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>

@@ -8,7 +8,7 @@ import Match from '../components/Match';
 import styles from '../styles/MainStyles';
 import SearchBar from '../components/SearchBar';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [tournaments, setTournaments] = useState([
     {
       id: '1',

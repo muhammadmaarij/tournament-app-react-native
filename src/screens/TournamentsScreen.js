@@ -9,7 +9,7 @@ import styles from '../styles/MainStyles';
 import SearchBar from '../components/SearchBar';
 import CustomButton from '../components/CustomButton';
 
-const TournamentsScreen = () => {
+const TournamentsScreen = ({navigation}) => {
   const [tournaments, setTournaments] = useState([
     {
       id: '1',

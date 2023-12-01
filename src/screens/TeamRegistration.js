@@ -16,7 +16,7 @@ import CustomTextInput from '../components/CustomTextInput';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const TeamRegistration = () => {
+const TeamRegistration = ({navigation}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>

@@ -12,7 +12,7 @@ import Header from '../components/Header';
 import CustomButton from '../components/CustomButton';
 import {Provider as PaperProvider} from 'react-native-paper';
 
-const EditMatchScreen = () => {
+const EditMatchScreen = ({navigation}) => {
   // Assuming you're passing the current match details as params to the route
   //   const {match, team1, team2} = route.params;
   const {match, team1, team2} = {match: 'match', team1: 'team1', team2: 'team'};
