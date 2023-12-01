@@ -26,9 +26,27 @@ const TournamentDetail = ({navigation, route}) => {
         <Text style={styles.prize}>Prize: {winning}</Text>
         <Text style={styles.slots}>Slots: {slots}</Text>
       </View>
-      <CustomButton title={'Register Individual'} />
-      <View style={{marginTop: 30}}></View>
-      <CustomButton title={'Register Team'} />
+      <CustomButton
+        title={'Register Individual'}
+        onPress={() => {
+          navigation.navigate('PlayerRegistration');
+        }}
+      />
+      <View style={{marginTop: 20}}></View>
+      <CustomButton
+        title={'Register Team'}
+        onPress={() => {
+          navigation.navigate('TeamRegistration');
+        }}
+      />
+      <View style={{marginTop: 20}}></View>
+
+      <CustomButton
+        title={'Tournament Format'}
+        onPress={() => {
+          navigation.navigate('TournamentFormat');
+        }}
+      />
     </View>
   );
 };
@@ -56,7 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   tournamentDetails: {
-    padding: 20,
+    paddingHorizontal: 20,
     alignItems: 'flex-start',
   },
   tournamentTitle: {

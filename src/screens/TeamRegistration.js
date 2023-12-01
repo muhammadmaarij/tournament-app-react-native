@@ -55,7 +55,10 @@ const TeamRegistration = ({navigation}) => {
             />
           </View>
           <View style={{height: 20}}></View>
-          <CustomButton title={'Register'} />
+          <CustomButton
+            title={'Register'}
+            onPress={() => navigation.navigate('HomeTabs')}
+          />
         </ScrollView>
       </SafeAreaView>
     </PaperProvider>

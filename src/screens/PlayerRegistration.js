@@ -19,7 +19,10 @@ const PlayerRegistration = ({navigation}) => {
           <CustomTextInput name={'Name'} placeholder={'Enter Player Name'} />
 
           <View style={{height: 50}}></View>
-          <CustomButton title={'Register'} />
+          <CustomButton
+            title={'Register'}
+            onPress={() => navigation.navigate('HomeTabs')}
+          />
         </ScrollView>
       </SafeAreaView>
     </PaperProvider>
