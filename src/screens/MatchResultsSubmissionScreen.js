@@ -30,7 +30,10 @@ const MatchResultSubmissionScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header text={'Results Submission'} />
+      <Header
+        text={'Results Submission'}
+        navigationFn={() => navigation.pop()}
+      />
       <ScrollView>
         <CustomTextInput
           name="Team 1 Score"
