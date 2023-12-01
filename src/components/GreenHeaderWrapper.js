@@ -16,9 +16,11 @@ const GreenHeaderWrapper = ({text, textSub, navigationFn}) => (
         justifyContent: 'space-between',
         marginTop: 10,
       }}>
-      <TouchableOpacity style={{marginLeft: 13}} onPress={navigationFn}>
-        <Icon name="angle-left" size={38} color="#FFFFFF" />
-      </TouchableOpacity>
+      {navigationFn && (
+        <TouchableOpacity style={{marginLeft: 13}} onPress={navigationFn}>
+          <Icon name="angle-left" size={38} color="#FFFFFF" />
+        </TouchableOpacity>
+      )}
       <Image
         source={require('../assets/images/logo.png')}
         style={{width: 25, height: 50, marginLeft: width * 0.4}}

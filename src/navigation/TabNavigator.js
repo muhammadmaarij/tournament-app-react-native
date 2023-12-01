@@ -4,7 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Results from '../assets/svgs/Results.svg';
 import Gamerxpo from '../assets/svgs/Gamerxpo.svg';
 import Tournament from '../assets/svgs/Tournament.svg';
@@ -13,84 +13,101 @@ import TournamentsScreen from '../screens/TournamentsScreen';
 import ResultsScreen from '../screens/ResultsScreen';
 import FavouriteTournamentsScreen from '../screens/FavouriteTournamentsScreen';
 import TournamentResultsScreen from '../screens/TournamentResultsScreen';
+import MainStyles from '../styles/MainStyles';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-      <Tab.Navigator
-        initialRouteName="Home"
-        inactiveColor="black"
-        activeColor="#4F6F52"
-        barStyle={{
-          backgroundColor: 'white',
-          height: height * 0.1,
-          width: width,
+    <Tab.Navigator
+      initialRouteName="Home"
+      inactiveColor="black"
+      activeColor="#4F6F52"
+      barStyle={{
+        backgroundColor: 'white',
+        height: height * 0.1,
+        width: width,
+      }}
+      screenOptions={({route}) => ({
+        headerShown: false, // Hide the header globally
+        tabBarActiveTintColor: '#4F6F52', // Color of the icon when the tab is active
+        tabBarInactiveTintColor: 'black', // Color of the icon when the tab is inactive
+        tabBarStyle: {
+          backgroundColor: 'white', // Background color of the tab bar
+          paddingBottom: 5, // Padding at the bottom of the tab bar
+          height: 60, // Height of the tab bar
+          shadowOpacity: 0, // Remove shadow on iOS
+          elevation: 0, // Remove elevation shadow on Android
+          borderTopWidth: 0, // Remove top border on tab bar
+        },
+        tabBarLabelStyle: {
+          fontSize: 10.5, // Font size of tab label
+          fontFamily: MainStyles.mediumText.fontFamily,
+        },
+        tabBarIconStyle: {
+          flex: 1,
+        },
+        // tabBarShowLabel: false,
+      })}
+      labeled={false}>
+      <Tab.Screen
+        name="Tournaments"
+        component={TournamentsScreen}
+        options={{
+          tabBarIcon: () => (
+            <Tournament width={width * 0.06} height={width * 0.06} />
+          ),
         }}
-        screenOptions={{headerShown: false}}>
-        <Tab.Screen
-          name="Tournaments"
-          component={TournamentsScreen}
-          options={{
-            tabBarIcon: () => (
-              <Tournament width={width * 0.06} height={width * 0.06} />
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tab.Screen
-          name="Fav"
-          component={FavouriteTournamentsScreen}
-          options={{
-            tabBarIcon: () => <Icon name="heart-o" size={28} color="black" />,
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarIcon: () => (
-              <View
-                style={{
-                  backgroundColor: '#4F6F52',
-                  height: width * 0.12,
-                  width: width * 0.12,
-                  borderRadius: width,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 50,
-                }}>
-                <Icon name="home" size={24} color="white" />
-              </View>
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tab.Screen
-          name="Results"
-          component={TournamentResultsScreen}
-          options={{
-            tabBarIcon: () => (
-              <Results width={width * 0.06} height={width * 0.06} />
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tab.Screen
-          name="GamerXpo"
-          component={HomeScreen}
-          options={{
-            tabBarIcon: () => (
-              <Gamerxpo width={width * 0.06} height={width * 0.06} />
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
-      </Tab.Navigator>
+      />
+      <Tab.Screen
+        name="Fav"
+        component={FavouriteTournamentsScreen}
+        options={{
+          tabBarIcon: () => <Icon name="heart-o" size={28} color="black" />,
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: () => (
+            <View
+              style={{
+                backgroundColor: '#4F6F52',
+                height: width * 0.12,
+                width: width * 0.12,
+                borderRadius: width,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 40,
+              }}>
+              <Icon name="home" size={24} color="white" />
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Results"
+        component={TournamentResultsScreen}
+        options={{
+          tabBarIcon: () => (
+            <Results width={width * 0.06} height={width * 0.06} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="GamerXpo"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: () => (
+            <Gamerxpo width={width * 0.07} height={width * 0.07} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 }
 
