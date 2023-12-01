@@ -10,7 +10,11 @@ const NewTournament = () => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header text={'New Tournament'} textSub={''} />
+        <Header
+          text={'New Tournament'}
+          textSub={''}
+          navigationFn={() => navigation.pop()}
+        />
         <ScrollView style={styles.scrollView}>
           <CustomTextInput
             name={'Title'}
