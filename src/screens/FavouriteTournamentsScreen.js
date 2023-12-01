@@ -27,11 +27,7 @@ const FavouriteTournamentsScreen = ({navigation, route}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header
-          text={'Favourite Tournaments'}
-          textSub={''}
-          navigationFn={() => navigation.pop()}
-        />
+        <Header text={'Favourite Tournaments'} textSub={''} />
         <ScrollView style={styles.scrollView}>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Favourite Tournaments</Text>

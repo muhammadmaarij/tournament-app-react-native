@@ -31,7 +31,7 @@ const TournamentResultsScreen = ({navigation}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header text={'Tournaments Results'} textSub={''} navigationFn={() => navigation.pop()}/>
+        <Header text={'Tournaments Results'} textSub={''} />
         <ScrollView style={styles.scrollView}>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Tournaments</Text>

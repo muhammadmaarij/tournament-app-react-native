@@ -27,11 +27,7 @@ const TournamentsScreen = ({navigation}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header
-          text={'Tournaments'}
-          textSub={''}
-          navigationFn={() => navigation.pop()}
-        />
+        <Header text={'Tournaments'} textSub={''} />
         <ScrollView style={styles.scrollView}>
           <CustomButton title={'New Tournament'} />
           <View style={styles.section}>
