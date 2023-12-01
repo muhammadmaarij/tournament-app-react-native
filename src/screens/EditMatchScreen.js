@@ -32,7 +32,11 @@ const EditMatchScreen = () => {
   return (
     <PaperProvider>
       <SafeAreaView style={{flex: 1}}>
-        <Header text={'Edit Match'} textSub={''} />
+        <Header
+          text={'Edit Match'}
+          textSub={''}
+          navigationFn={() => navigation.pop()}
+        />
         <ScrollView contentContainerStyle={{flexGrow: 1, marginBottom: 30}}>
           <CustomTextInput
             onChangeText={setMatchName}
