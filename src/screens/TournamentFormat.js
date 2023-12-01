@@ -14,7 +14,11 @@ const TournamentFormat = () => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header text={'Tournament Format'} textSub={''} />
+        <Header
+          text={'Tournament Format'}
+          textSub={''}
+          navigationFn={() => navigation.pop()}
+        />
         <Text
           style={{
             fontSize: 16,
