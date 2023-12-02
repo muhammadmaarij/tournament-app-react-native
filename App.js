@@ -16,12 +16,14 @@ import MatchResultSubmissionScreen from './src/screens/MatchResultsSubmissionScr
 import TournamentDetail from './src/screens/TournamentDetail';
 import StackNavigator from './src/navigation/StackNavigator';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import KnockoutPhase from './src/screens/KnockoutPhase';
 
 const App = () => {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <StackNavigator />
     </GestureHandlerRootView>
+    // <KnockoutPhase />
   );
 };
 

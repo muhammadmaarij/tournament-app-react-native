@@ -64,9 +64,9 @@ const NewTournament = ({navigation}) => {
           />
           <View style={{height: 20}}></View>
           <CustomButton
-            title={'Create Tournament'}
+            title={'Next'}
             onPress={() => {
-              navigation.navigate('HomeTabs');
+              navigation.navigate('TournamentFormat');
             }}
           />
           <View style={{height: 20}}></View>

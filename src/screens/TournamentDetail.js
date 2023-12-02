@@ -42,9 +42,9 @@ const TournamentDetail = ({navigation, route}) => {
       <View style={{marginTop: 20}}></View>
 
       <CustomButton
-        title={'Tournament Format'}
+        title={'Knockout Phase'}
         onPress={() => {
-          navigation.navigate('TournamentFormat');
+          navigation.navigate('KnockoutPhase');
         }}
       />
     </View>

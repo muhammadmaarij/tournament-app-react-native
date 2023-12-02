@@ -30,7 +30,12 @@ const TournamentFormat = ({navigation}) => {
         </Text>
         <TotalTeamsC />
         <View style={{marginTop: 200}}></View>
-        <CustomButton title={'Create Phase'} />
+        <CustomButton
+          title={'Create Tournament'}
+          onPress={() => {
+            navigation.navigate('HomeTabs');
+          }}
+        />
       </SafeAreaView>
     </PaperProvider>
   );

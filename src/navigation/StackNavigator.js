@@ -14,6 +14,8 @@ import TournamentDetail from '../screens/TournamentDetail';
 import TournamentFormat from '../screens/TournamentFormat';
 import TournamentsScreen from '../screens/TournamentsScreen';
 import TabNavigation from './TabNavigator';
+import KnockoutPhase from '../screens/KnockoutPhase';
+import MatchSlot from '../components/MatchSlot';
 
 const Stack = createStackNavigator();
 
@@ -41,6 +43,8 @@ function StackNavigator() {
         <Stack.Screen name="TournamentDetail" component={TournamentDetail} />
         <Stack.Screen name="TournamentFormat" component={TournamentFormat} />
         <Stack.Screen name="TournamentsScreen" component={TournamentsScreen} />
+        <Stack.Screen name="KnockoutPhase" component={KnockoutPhase} />
+        <Stack.Screen name="MatchSlot" component={MatchSlot} />
       </Stack.Navigator>
     </NavigationContainer>
   );
