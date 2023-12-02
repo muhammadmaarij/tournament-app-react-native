@@ -44,7 +44,7 @@ export default function TabNavigation() {
           borderTopWidth: 0,
         },
         tabBarLabelStyle: {
-          fontSize: 10.5, // Font size of tab label
+          fontSize: 10.5,
           fontFamily: MainStyles.mediumText.fontFamily,
         },
         tabBarIconStyle: {
