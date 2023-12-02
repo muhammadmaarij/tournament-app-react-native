@@ -32,16 +32,16 @@ export default function TabNavigation() {
         width: width,
       }}
       screenOptions={({route}) => ({
-        headerShown: false, // Hide the header globally
-        tabBarActiveTintColor: '#4F6F52', // Color of the icon when the tab is active
-        tabBarInactiveTintColor: 'black', // Color of the icon when the tab is inactive
+        headerShown: false,
+        tabBarActiveTintColor: '#4F6F52',
+        tabBarInactiveTintColor: 'black',
         tabBarStyle: {
-          backgroundColor: 'white', // Background color of the tab bar
-          paddingBottom: 5, // Padding at the bottom of the tab bar
-          height: 60, // Height of the tab bar
+          backgroundColor: 'white',
+          paddingBottom: 5,
+          height: 60,
           shadowOpacity: 0, // Remove shadow on iOS
           elevation: 0, // Remove elevation shadow on Android
-          borderTopWidth: 0, // Remove top border on tab bar
+          borderTopWidth: 0,
         },
         tabBarLabelStyle: {
           fontSize: 10.5, // Font size of tab label
