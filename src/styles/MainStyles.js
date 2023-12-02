@@ -24,7 +24,7 @@ export default StyleSheet.create({
     marginHorizontal: 16,
     marginTop: 16,
     elevation: 2,
-    width: width - 32, // subtract margins
+    width: width - 32,
   },
   section: {
     marginTop: 16,
@@ -33,7 +33,7 @@ export default StyleSheet.create({
     marginLeft: 16,
     fontSize: 20,
     fontWeight: 'bold',
-    color:'black'
+    color: 'black',
   },
   scrollView: {
     backgroundColor: '#f5f5f5',
