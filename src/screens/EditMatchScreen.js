@@ -24,7 +24,6 @@ const EditMatchScreen = ({navigation}) => {
   const [time, setTime] = useState('');
   const [matchLink, setMatchLink] = useState('');
 
-  // Handle saving the edited match details
   const handleSave = () => {
     // Save logic goes here
   };
@@ -86,5 +85,4 @@ const EditMatchScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({});
 
-// Assuming you have a separate file for CustomTextInput
 export default EditMatchScreen;
