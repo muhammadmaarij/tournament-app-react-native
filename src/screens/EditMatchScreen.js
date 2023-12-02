@@ -74,7 +74,10 @@ const EditMatchScreen = ({navigation}) => {
             placeholder="Enter match link"
             name="Match Link"
           />
-          <CustomButton title={'Update'} />
+          <CustomButton
+            title={'Update'}
+            onPress={() => navigation.navigate('KnockoutPhase')}
+          />
         </ScrollView>
       </SafeAreaView>
     </PaperProvider>

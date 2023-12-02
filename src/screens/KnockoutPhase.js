@@ -41,7 +41,7 @@ const KnockoutPhase = ({navigation}) => {
 
   return (
     <>
-      <Header text={'Knockout Phase'} />
+      <Header text={'Knockout Phase'} navigationFn={() => navigation.pop()} />
       <ScrollView style={styles.container}>
         <View style={styles.roundContainer}>
           {/* Render Quarter Finals */}
