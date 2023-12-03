@@ -1,8 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-
-// Import screens
 import HomeScreen from '../screens/HomeScreen';
 import EditMatchScreen from '../screens/EditMatchScreen';
 import MatchResultsSubmissionScreen from '../screens/MatchResultsSubmissionScreen';
