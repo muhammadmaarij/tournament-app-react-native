@@ -3,7 +3,6 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const MatchSlot = ({match, team1, team2, type, isSpectator, onPress}) => {
-  // A helper function to render the team slot
   const renderTeamSlot = (team, isTeam1) => {
     return (
       <View style={styles.team}>
