@@ -5,7 +5,7 @@ import Team from '../assets/svgs/Team.svg';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
-const Match = ({match, time}) => (
+const Match = ({match, time, team1, team2}) => (
   <View
     style={{
       height: 160,
@@ -26,12 +26,12 @@ const Match = ({match, time}) => (
     </View>
     <View style={{flexDirection: 'row', margin: 10}}>
       <View>
-        <Text style={styles.name}>Team 1</Text>
+        <Text style={styles.name}>{team1}</Text>
         <Team width={screenWidth * 0.1} height={screenWidth * 0.1} />
       </View>
       <Text style={{margin: 15}}>VS</Text>
       <View>
-        <Text style={styles.name}>Team 1</Text>
+        <Text style={styles.name}>{team2}</Text>
         <Team width={screenWidth * 0.1} height={screenWidth * 0.1} />
       </View>
     </View>

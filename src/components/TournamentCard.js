@@ -5,7 +5,14 @@ import {shadow} from 'react-native-paper';
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-export default function PostCard({name, time, winning, uri, slots}) {
+export default function TournamentCard({
+  name,
+  startDate,
+  winning,
+  uri,
+  slots,
+  endDate,
+}) {
   const [imageHeight, setImageHeight] = useState(0);
 
   const handleImageLoad = event => {
@@ -38,7 +45,9 @@ export default function PostCard({name, time, winning, uri, slots}) {
       <View style={{flexDirection: 'row', margin: 10}}>
         <View>
           <Text style={styles.name}>{name}</Text>
-          <Text style={styles.time}>{time}</Text>
+          <Text style={styles.time}>
+            {startDate}---{endDate}
+          </Text>
         </View>
       </View>
       <View
@@ -47,7 +56,7 @@ export default function PostCard({name, time, winning, uri, slots}) {
           justifyContent: 'space-between',
         }}>
         <Text style={styles.caption}>Winning: {winning}</Text>
-        <Text style={styles.caption}>{slots}</Text>
+        <Text style={styles.caption}>Slots: {slots}</Text>
       </View>
     </View>
   );
