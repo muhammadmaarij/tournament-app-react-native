@@ -5,14 +5,43 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../components/Header';
 import CustomButton from '../components/CustomButton';
+import {deleteTournament} from '../utils/api/api';
 
 const TournamentDetail = ({navigation, route}) => {
-  const {id, name, startDate, endDate, winning, slots, details} = route.params;
-  console.log(route.params)
+  const {id, name, startDate, endDate, winning, slots, details, creator} =
+    route.params;
+  console.log(route.params);
+  const handleDelete = () => {
+    Alert.alert(
+      'Confirm Delete',
+      'Are you sure you want to delete this tournament?',
+      [
+        {text: 'Cancel', style: 'cancel'},
+        {
+          text: 'Delete',
+          onPress: async () => {
+            try {
+              await deleteTournament(id);
+              navigation.pop(); // or navigation.goBack();
+            } catch (error) {
+              console.error('Error deleting tournament:', error);
+              // Display an error message if needed
+            }
+          },
+        },
+      ],
+      {cancelable: false},
+    );
+  };
+
+  // const isCreator = currentUser && creator && currentUser.id === creator;
+  const isCreator = true;
+
   return (
     <View style={styles.container}>
       <Header
@@ -20,7 +49,14 @@ const TournamentDetail = ({navigation, route}) => {
         navigationFn={() => navigation.pop()}
       />
       <View style={styles.tournamentDetails}>
-        <Text style={styles.tournamentTitle}>{name}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.tournamentTitle}>{name}</Text>
+          {isCreator && (
+            <TouchableOpacity onPress={handleDelete}>
+              <Icon name="trash" size={24} color="#b22222" />
+            </TouchableOpacity>
+          )}
+        </View>
         <Text style={styles.tournamentSubtitle}>{details}</Text>
         <Text style={styles.date}>Start date: {startDate}</Text>
         <Text style={styles.date}>End date: {endDate}</Text>
@@ -56,6 +92,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%', // Make sure the container uses the full width
   },
   header: {
     height: '30%',
