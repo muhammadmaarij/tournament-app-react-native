@@ -12,6 +12,7 @@ import CustomButton from '../components/CustomButton';
 
 const TournamentDetail = ({navigation, route}) => {
   const {id, name, startDate, endDate, winning, slots, details} = route.params;
+  console.log(route.params)
   return (
     <View style={styles.container}>
       <Header

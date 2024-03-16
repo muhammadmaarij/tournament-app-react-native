@@ -71,8 +71,7 @@ import TournamentCard from '../components/TournamentCard';
 import Match from '../components/Match';
 import styles from '../styles/MainStyles';
 
-// Import API functions
-import {fetchTournaments, fetchMatches} from '../utils/api/api'; // Adjust the path as needed
+import {fetchTournaments, fetchMatches} from '../utils/api/api';
 
 const HomeScreen = ({navigation}) => {
   const [tournaments, setTournaments] = useState([]);
@@ -113,13 +112,12 @@ const HomeScreen = ({navigation}) => {
               <TournamentCard
                 key={tournament.id}
                 style={styles.card}
-                // Assuming these properties are part of the tournament object
                 name={tournament.title}
-                // time={`${tournament.start_date} - ${tournament.end_date}`}
                 winning={tournament.winning_prize}
                 slots={tournament.slots}
                 startDate={tournament.start_date}
                 endDate={tournament.end_date}
+                uri={tournament.image} // Pass the image URL as the uri prop
               />
             ))}
           </View>
@@ -133,7 +131,6 @@ const HomeScreen = ({navigation}) => {
                 time={match.time}
                 team1={match.team1}
                 team2={match.team2}
-                // Other props as needed
               />
             ))}
           </View>

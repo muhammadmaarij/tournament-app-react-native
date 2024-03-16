@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Dimensions, Image, Text} from 'react-native';
 import {shadow} from 'react-native-paper';
-
+import {SERVER_URL} from '../utils/constants';
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
@@ -14,6 +14,7 @@ export default function TournamentCard({
   endDate,
 }) {
   const [imageHeight, setImageHeight] = useState(0);
+  console.log(uri);
 
   const handleImageLoad = event => {
     const {height, width} = event.nativeEvent.source;
@@ -34,7 +35,13 @@ export default function TournamentCard({
       }}>
       <View style={[styles.container, {height: screenHeight * 0.2}]}>
         <Image
-          source={require('../assets/images/tekken.png')}
+          source={
+            uri
+              ? {
+                  uri: `${SERVER_URL}/${uri}`, // Pass the image URL as the uri prop
+                }
+              : require('../assets/images/tekken.png')
+          }
           style={[
             styles.image,
             {height: screenHeight * 0.2, width: screenWidth * 0.65},

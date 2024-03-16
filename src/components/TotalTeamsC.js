@@ -5,15 +5,22 @@ import DropDownPicker from 'react-native-dropdown-picker';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const TotalTeamsC = () => {
+const TotalTeamsC = ({onChange}) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState(0);
   const [items, setItems] = useState([
     {label: '2', value: '2'},
     {label: '4', value: '4'},
     {label: '8', value: '8'},
     {label: '16', value: '16'},
   ]);
+
+  const handleValueChange = selectedValue => {
+    setValue(selectedValue); // Update the local state
+    if (onChange) {
+      onChange(selectedValue); // Notify the parent component
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -22,7 +29,7 @@ const TotalTeamsC = () => {
         value={value}
         items={items}
         setOpen={setOpen}
-        setValue={setValue}
+        setValue={handleValueChange}
         setItems={setItems}
         zIndex={1000} // Ensure dropdown is on top of other components
         zIndexInverse={1000}
@@ -51,7 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     width: width * 0.7,
     alignSelf: 'center',
-    marginTop:10
+    marginTop: 10,
   },
 });
 

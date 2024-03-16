@@ -14,7 +14,22 @@ const API = axios.create({baseURL: SERVER_URL});
 // Tournaments
 export const fetchTournaments = () => API.get('/api/tournaments/');
 export const fetchTournamentDetail = id => API.get(`/api/tournaments/${id}/`);
-export const createTournament = data => API.post('/api/tournaments/', data);
+export const createTournament = data => {
+  return API.post('/api/tournaments/', data)
+    .then(response => response.data)
+    .catch(error => {
+      console.error('Error in createTournament:', error);
+      if (error.response) {
+        // Detailed error information
+        console.log('Response Data:', error.response.data);
+        console.log('Response Status:', error.response.status);
+        console.log('Response Headers:', error.response.headers);
+      } else {
+        console.log('Error Message:', error.message);
+      }
+      throw error; // Re-throw the error for further handling
+    });
+};
 export const updateTournament = (id, data) =>
   API.put(`/api/tournaments/${id}/`, data);
 export const deleteTournament = id => API.delete(`/api/tournaments/${id}/`);

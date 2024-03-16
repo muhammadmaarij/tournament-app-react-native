@@ -18,11 +18,7 @@ const NewTournament = ({navigation}) => {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <Header
-          text={'New Tournament'}
-          textSub={''}
-          navigationFn={() => navigation.pop()}
-        />
+        <Header text={'New Tournament'} navigationFn={() => navigation.pop()} />
         <ScrollView style={styles.scrollView}>
           <CustomTextInput
             name={'Title'}
@@ -66,7 +62,14 @@ const NewTournament = ({navigation}) => {
           <CustomButton
             title={'Next'}
             onPress={() => {
-              navigation.navigate('TournamentFormat');
+              navigation.navigate('TournamentFormat', {
+                title,
+                slots,
+                startDate,
+                endDate,
+                winning,
+                details,
+              });
             }}
           />
           <View style={{height: 20}}></View>
