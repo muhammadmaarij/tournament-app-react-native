@@ -9,7 +9,7 @@ export default function CustomTextInput({
   text,
   placeholder,
   secureText,
-  name
+  name,
 }) {
   return (
     <View>
@@ -18,8 +18,8 @@ export default function CustomTextInput({
           fontSize: 16,
           fontWeight: '700',
           color: '#567189',
-          marginLeft: width * 0.1,
-          marginBottom:5
+          marginLeft: width * 0.15,
+          marginBottom: 5,
         }}>
         {name}
       </Text>
@@ -38,7 +38,7 @@ export default function CustomTextInput({
 const styles = StyleSheet.create({
   input: {
     height: 45,
-    width: width * 0.8,
+    width: width * 0.7,
     backgroundColor: '#4F6F52',
     justifyContent: 'center',
     alignItems: 'center',
