@@ -21,6 +21,7 @@ const MatchResultSubmissionScreen = ({navigation}) => {
 
   const handleSubmit = () => {
     // Submit logic goes here...
+    navigation.navigate('KnockoutPhase');
     console.log({
       team1Score,
       team2Score,

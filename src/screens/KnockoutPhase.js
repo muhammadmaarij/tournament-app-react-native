@@ -50,8 +50,11 @@ const KnockoutPhase = ({navigation}) => {
               <MatchSlot
                 key={match.id}
                 {...match}
-                isSpectator={false}
+                isSpectator={true}
                 onPress={() => navigation.navigate('EditMatchScreen')}
+                onPress2={() =>
+                  navigation.navigate('MatchResultsSubmissionScreen')
+                }
               />
             ))}
           </View>

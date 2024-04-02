@@ -57,8 +57,8 @@ const CustomDatePicker = ({name, date, onChange}) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: width * 0.1,
-    width: width * 0.8,
+    marginHorizontal: width * 0.15,
+    width: width * 0.7,
     marginBottom: 10,
   },
   text: {

@@ -20,7 +20,11 @@ const Stack = createStackNavigator();
 function StackNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeTabs">
+      <Stack.Navigator
+        initialRouteName="HomeTabs"
+        screenOptions={{
+          headerShown: false,
+        }}>
         <Stack.Screen
           name="HomeTabs"
           component={TabNavigation}

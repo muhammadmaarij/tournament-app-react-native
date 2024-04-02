@@ -17,12 +17,15 @@ import TournamentDetail from './src/screens/TournamentDetail';
 import StackNavigator from './src/navigation/StackNavigator';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import KnockoutPhase from './src/screens/KnockoutPhase';
+import LoginScreen from './src/screens/LoginScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
 
 const App = () => {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <StackNavigator />
     </GestureHandlerRootView>
+    // <SignUpScreen />
     // <KnockoutPhase />
   );
 };

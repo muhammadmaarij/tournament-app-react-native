@@ -2,7 +2,15 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const MatchSlot = ({match, team1, team2, type, isSpectator, onPress}) => {
+const MatchSlot = ({
+  match,
+  team1,
+  team2,
+  type,
+  isSpectator,
+  onPress,
+  onPress2,
+}) => {
   const renderTeamSlot = (team, isTeam1) => {
     return (
       <View style={styles.team}>
@@ -25,7 +33,7 @@ const MatchSlot = ({match, team1, team2, type, isSpectator, onPress}) => {
       {renderTeamSlot(team1, true)}
       {renderTeamSlot(team2, false)}
       {isSpectator && (
-        <TouchableOpacity style={styles.resultButton} onPress={() => {}}>
+        <TouchableOpacity style={styles.resultButton} onPress={onPress2}>
           <Text style={styles.resultButtonText}>Submit Result</Text>
           <Icon name="trophy" size={24} color="white" />
         </TouchableOpacity>

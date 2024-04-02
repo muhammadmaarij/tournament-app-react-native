@@ -104,9 +104,15 @@ const TournamentFormat = ({navigation, route}) => {
         {image && (
           <Image
             source={{uri: image.uri}}
-            style={{width: 100, height: 100, alignSelf: 'center'}}
+            style={{
+              width: 100,
+              height: 100,
+              alignSelf: 'center',
+              marginTop: 20,
+            }}
           />
         )}
+        <View style={{height: 20}}></View>
 
         <CustomButton title={'Create Tournament'} onPress={handleSubmit} />
       </SafeAreaView>
